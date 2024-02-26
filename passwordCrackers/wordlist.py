@@ -19,21 +19,26 @@ def hash(wordlistpassword):
  
  
 def wordlistAttack(guesspasswordlist, actual_password_hash):
+
+    count = 0;
+
     for guess_password in guesspasswordlist:
         hash_guess = hash(guess_password)
+
+        count = count + 1
         if hash_guess == actual_password_hash:
             print("Your password is:", guess_password)
             exit()
         else:
             if print_failure:
-                print("Guessing passowrd: ", guess_password)
+                print("Guessing passowrd (%d): "%count, guess_password)
             if slow:
                 time.sleep(0.1)
  
 ############# append the below code ################
 
 url = 'https://raw.githubusercontent.com/berzerk0/Probable-Wordlists/master/Real-Passwords/Top12Thousand-probable-v2.txt'
-actual_password = 'cooldude' # examples: sunshine or cooldude
+actual_password = 'sunshine2' # examples: sunshine or cooldude
 actual_password_hash = hash(actual_password)
 slow = False
 print_failure = True

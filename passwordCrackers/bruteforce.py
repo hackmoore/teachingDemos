@@ -37,7 +37,7 @@ def bruteforce(password, max_nchar=8):
 actual_password = 'sunshine'
 actual_password_hash = hash(actual_password)
 slow = False
-print_failure = False
+print_failure = True
  
 # Running the Brute Force attack
 bruteforce(actual_password_hash)

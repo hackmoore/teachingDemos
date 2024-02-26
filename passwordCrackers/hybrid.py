@@ -48,8 +48,8 @@ def modification(password, mod):
 def wordlistAttack(guesspasswordlist, actual_password_hash):
     for guess_password in guesspasswordlist:
         for mod in range(0, 6):
-            print(guess_password)
             passwords = modification(guess_password, mod)
+            print(passwords)
 
             for gPassword in passwords:
                 hash_guess = hash(gPassword)
